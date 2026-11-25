@@ -1,0 +1,17 @@
+GCode Sender (Android)
+Copyright 2026 GCode Sender contributors
+
+本产品包含由第三方开发的软件：
+
+1) usb-serial-for-android
+   Copyright (c) 2011-2024 Google Inc. / mike wakerly / Kai Gossner (mik3y)
+   Apache License, Version 2.0
+   https://github.com/mik3y/usb-serial-for-android
+   源码以源码形式内联在 third_party/usbSerialJava 目录（未修改业务逻辑，
+   仅补充一个 BuildConfig 兼容类）。
+
+2) AndroidX Annotation
+   Copyright (c) The Android Open Source Project
+   Apache License, Version 2.0
+
+本项目整体以 Apache License 2.0 发布，全文见 LICENSE。

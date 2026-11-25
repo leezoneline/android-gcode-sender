@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView style="@style/Section" android:text="1. 连接机器" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <Spinner
+                android:id="@+id/spDevice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btnRefresh"
+                style="@style/SmallBtn"
+                android:text="刷新" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="4dp">
+
+            <TextView style="@style/Label" android:text="波特率" />
+
+            <Spinner
+                android:id="@+id/spBaud"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView style="@style/Label" android:text="行尾" />
+
+            <Spinner
+                android:id="@+id/spLineEnding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <CheckBox
+                android:id="@+id/cbDtr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="DTR" />
+
+            <CheckBox
+                android:id="@+id/cbRts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="RTS" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btnConnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="连接" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvConnState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="未连接"
+            android:textSize="13sp"
+            android:textColor="#666666" />
+
+        <TextView style="@style/Section" android:text="2. 选择 G 代码文件" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btnPick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择文件" />
+
+            <TextView
+                android:id="@+id/tvFile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:textSize="13sp"
+                android:text="未选择" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cbStrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="发送时跳过空行、注释行与行内注释" />
+
+        <TextView style="@style/Section" android:text="3. 发送参数" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView style="@style/Label" android:text="流控" />
+
+            <Spinner
+                android:id="@+id/spMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView style="@style/Label" android:text="定时间隔(ms)" />
+
+            <EditText
+                android:id="@+id/etInterval"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="30"
+                android:textSize="14sp" />
+
+            <TextView style="@style/Label" android:text="  GRBL 缓冲" />
+
+            <EditText
+                android:id="@+id/etWindow"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="120"
+                android:textSize="14sp" />
+
+            <TextView style="@style/Label" android:text="  超时(s)" />
+
+            <EditText
+                android:id="@+id/etTimeout"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="15"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView style="@style/Label" android:text="开始前" />
+
+            <EditText
+                android:id="@+id/etStartCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="可选，用 ; 分隔"
+                android:textSize="13sp"
+                android:inputType="textNoSuggestions" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView style="@style/Label" android:text="结束后" />
+
+            <EditText
+                android:id="@+id/etEndCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="可选，用 ; 分隔"
+                android:textSize="13sp"
+                android:inputType="textNoSuggestions" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="开始" />
+
+            <Button
+                android:id="@+id/btnPause"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="暂停" />
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="停止" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/pbProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:max="1000" />
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:text="等待开始" />
+
+        <TextView style="@style/Section" android:text="4. 手动命令 / 点动" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/etCmd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="如 $$  或  G0 X10 Y10  （; 分隔多条）"
+                android:textSize="13sp"
+                android:inputType="textNoSuggestions" />
+
+            <Button
+                android:id="@+id/btnSendCmd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发送" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/llQuick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <TextView style="@style/Section" android:text="日志" />
+
+        <ScrollView
+            android:id="@+id/scrollLog"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="#111111"
+            android:padding="6dp">
+
+            <TextView
+                android:id="@+id/tvLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B2FF59"
+                android:textSize="11sp"
+                android:typeface="monospace"
+                android:textIsSelectable="true" />
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnClearLog"
+            style="@style/SmallBtn"
+            android:layout_gravity="end"
+            android:layout_marginTop="4dp"
+            android:text="清空日志" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="11sp"
+            android:textColor="#888888"
+            android:text="提示：CH340/CP2102 需 OTG 线；GRBL/Marlin 选「等待 ok」，EBB(绘图仪) 选「定时发送」。手机需支持 USB Host(OTG)。" />
+
+    </LinearLayout>
+</ScrollView>

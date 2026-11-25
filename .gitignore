@@ -1,0 +1,36 @@
+# ---- Gradle / Android ----
+.gradle/
+build/
+app/build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.iml
+*.hprof
+
+# ---- 签名密钥（自行生成，绝不入库）----
+keystore.jks
+*.jks
+*.keystore
+keystore.properties
+
+# ---- 构建产物 ----
+*.apk
+*.aab
+*.aab.*
+release/*.apk
+app/build/outputs/
+
+# ---- IDE ----
+.idea/
+.vscode/
+*.swp
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 测试临时产物 ----
+_test/out/
