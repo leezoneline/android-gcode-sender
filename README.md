@@ -2,7 +2,7 @@
 
 [![build-apk](https://github.com/leezoneline/android-gcode-sender/actions/workflows/build-apk.yml/badge.svg)](https://github.com/leezoneline/android-gcode-sender/actions/workflows/build-apk.yml)
 ![minSdk](https://img.shields.io/badge/minSdk-21-brightgreen)
-![license](https://img.shields.io/badge/license-Apache--2.0-blue)
+![license](https://img.shields.io/badge/license-MIT-green)
 
 > 用安卓手机通过 OTG 直接驱动雕刻机 / 写字机 / 绘图仪：把桌面软件导出的 GCode 文件流式发送给
 > **GRBL / Marlin / EBB** 主板。手机端只管发送，排版与出图仍在电脑上做。
@@ -111,7 +111,7 @@ gradle assembleRelease
 │       │   ├── SerialLink.java          # OTG 串口封装
 │       │   └── GcodePlayback.java       # 播放引擎（三种流控）
 │       └── res/                         # 布局、样式、图标、USB 设备过滤
-├── third_party/usbSerialJava/           # usb-serial-for-android 3.8.1（Apache-2.0）
+├── third_party/usbSerialJava/           # usb-serial-for-android 3.8.1（MIT）
 ├── .github/workflows/build-apk.yml      # 打 tag 自动构建并发布 Release
 ├── build-apk.sh
 └── README.md / LICENSE / NOTICE
@@ -134,7 +134,7 @@ gradle assembleRelease
 
 ## 协议
 
-[Apache License 2.0](LICENSE)。第三方组件与版权声明见 [NOTICE](NOTICE)。
+[MIT License](LICENSE)。第三方组件与版权声明见 [NOTICE](NOTICE)。
 
 ## 范围说明
 
