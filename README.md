@@ -1,6 +1,5 @@
 # GCode Sender for Android
 
-[![build-apk](https://github.com/leezoneline/android-gcode-sender/actions/workflows/build-apk.yml/badge.svg)](https://github.com/leezoneline/android-gcode-sender/actions/workflows/build-apk.yml)
 ![minSdk](https://img.shields.io/badge/minSdk-21-brightgreen)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
